@@ -1,4 +1,4 @@
-# Angular 2 Dart playground
+# Ng2 Notes
 
 A simple Notes application made with Angular 2, Dart and Materialize. Based on the Todo application.
 
