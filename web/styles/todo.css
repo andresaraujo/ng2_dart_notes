@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body, html
+{
+    background-color: #EDEDED !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intro
+{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 30px;
+}
