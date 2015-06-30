@@ -2,7 +2,6 @@ library app;
 
 import 'package:angular2/angular2.dart';
 import '../../services/todo_store.dart' show Store, Todo, TodoFactory;
-import 'dart:html';
 
 @Component(selector: 'app', appInjector: const [Store, TodoFactory])
 @View(templateUrl: 'components/app/app.html', directives: const [NgFor, formDirectives])
@@ -18,15 +17,7 @@ class AppComponent {
 
   AppComponent(this.todoStore, this.todoFactory);
 
-  enterTodo(KeyboardEvent event, ngElement) {
-    InputElement input = (ngElement as InputElement);
-    if (event.which == 13) {
-      this.addTodo(input.value, "");
-      input.value = "";
-    }
-  }
-
-  xTodo() {
+  enterTodo() {
     this.addTodo(newTitle, newContent);
     newTitle = "";
     newContent = "";
@@ -65,10 +56,5 @@ class AppComponent {
 
   clearCompleted() {
     todoStore.removeBy((Todo todo) => todo.completed);
-  }
-
-  yyy() {
-    //showAll = true;
-    print("wwwwwwwwwww");
   }
 }

@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row"  [class.hide]="!showAll">
-                <a class="right waves-effect waves-light btn" (click)="xTodo()">Done</a>
+                <a class="right waves-effect waves-light btn" (click)="enterTodo()">Done</a>
             </div>
 
         </div>
@@ -27,7 +27,7 @@
         <div class="card">
             <div [class.hide]="todoEdit == todo">
                 <div class="card-content">
-                    <span class="card-title black-text" (dblclick)="editTodo(todo)">{{todo.title}}</span>
+                    <span class="card-title black-text" (click)="editTodo(todo)">{{todo.title}}</span>
                     <p>{{todo.content}}</p>
                 </div>
                 <div class="card-action">
