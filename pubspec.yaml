@@ -1,9 +1,9 @@
 name: 'ng2_dart_notes'
 version: 0.0.1
 description: >
-  An absolute bare-bones web app.
+  A Notes application made with Angular 2
 author: Andres Araujo <a.araujo.azua@gmail.com>
-#homepage: https://www.example.com
+homepage: http://andresaraujo.github.io/ng2_dart_notes/
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:

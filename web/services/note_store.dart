@@ -5,28 +5,29 @@ class KeyModel {
   KeyModel(this.key);
 }
 
-class Todo extends KeyModel {
+class Note extends KeyModel {
   String title;
   String content;
-  bool completed;
 
-  Todo(int key, this.title, this.content, this.completed) : super(key);
+  Note(int key, this.title, this.content) : super(key);
+
+  toString() => "{'title': $title, 'content': $content}";
 }
 
-class TodoFactory {
+class NoteFactory {
   num uid = 1;
 
   nextUid() {
     this.uid = this.uid + 1;
   }
 
-  create(String title, String content, bool complete) {
-    return new Todo(nextUid(), title, content, complete);
+  create(String title, String content) {
+    return new Note(nextUid(), title, content);
   }
 }
 
 class Store {
-  List<KeyModel> list = [new Todo(0, "Add moar tasks!", "", false)];
+  List<KeyModel> list = [new Note(0, "Add moar tasks!", "")];
 
   add(KeyModel record) {
     list.insert(0, record);
