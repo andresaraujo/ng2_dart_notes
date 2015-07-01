@@ -11,16 +11,16 @@ import '../card/card.dart';
 class AppComponent {
   Store noteStore;
   Note selectedNote = null;
-  NoteFactory noteFactory;
+  NoteFactory _noteFactory;
 
   String newTitle;
   String newContent;
 
   bool showAll = false;
 
-  bool ignoreSelection = false;
+  bool _ignoreSelection = false;
 
-  AppComponent(this.noteStore, this.noteFactory);
+  AppComponent(this.noteStore, this._noteFactory);
 
   enterNote() {
     _addNote(newTitle, newContent);
@@ -30,8 +30,8 @@ class AppComponent {
   }
 
   selectNote(Note note) {
-    if (ignoreSelection) {
-      ignoreSelection = false;
+    if (_ignoreSelection) {
+      _ignoreSelection = false;
       return;
     }
     this.selectedNote = note;
@@ -47,12 +47,12 @@ class AppComponent {
   clearSelection([bool preventSelection = false]) {
     selectedNote = null;
     if (preventSelection) {
-      ignoreSelection = true;
+      _ignoreSelection = true;
     }
   }
 
   _addNote(String title, String content) {
-    noteStore.add(noteFactory.create(title, content));
+    noteStore.add(_noteFactory.create(title, content));
   }
 
   deleteMe(Note note) {
