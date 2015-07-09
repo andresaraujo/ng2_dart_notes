@@ -1,5 +1,8 @@
 library todo_store;
 
+import 'package:angular2/di.dart';
+
+
 class KeyModel {
   int key;
   KeyModel(this.key);
@@ -14,6 +17,7 @@ class Note extends KeyModel {
   toString() => "{'title': $title, 'content': $content}";
 }
 
+@Injectable()
 class NoteFactory {
   num uid = 1;
 
@@ -26,6 +30,7 @@ class NoteFactory {
   }
 }
 
+@Injectable()
 class Store {
   List<KeyModel> list = [new Note(0, "Add moar tasks!", "")];
 
