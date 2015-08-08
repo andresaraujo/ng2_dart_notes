@@ -4,15 +4,15 @@ import 'package:angular2/angular2.dart';
 @Component(
     selector: "notes-card",
     events: const [
-  "onSave: onsave",
-  "onDelete: ondelete",
-  "onCancel: oncancel"
-],
+      "onSave: onsave",
+      "onDelete: ondelete",
+      "onCancel: oncancel"
+    ],
     properties: const ["title", "content", "edit"],
     host: const {'(body:^keydown)': 'documentOnKeyPress(\$event)'})
 @View(
     directives: const [formDirectives],
-    templateUrl: "components/card/card.html")
+    templateUrl: "package:ng2_dart_notes/components/card/card.html")
 class Card {
   String _title;
   String _content;

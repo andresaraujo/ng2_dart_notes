@@ -1,12 +1,12 @@
 library app;
 
 import 'package:angular2/angular2.dart';
-import '../../services/note_store.dart' show Store, Note, NoteFactory;
-import '../card/card.dart';
+import 'package:ng2_dart_notes/services/note_store.dart' show Store, Note, NoteFactory;
+import 'package:ng2_dart_notes/components/card/card.dart';
 
-@Component(selector: 'app', viewInjector: const [Store, NoteFactory])
+@Component(selector: 'app', viewBindings: const [Store, NoteFactory])
 @View(
-    templateUrl: 'components/app/app.html',
+    templateUrl: 'package:ng2_dart_notes/app.html',
     directives: const [NgFor, formDirectives, Card])
 class AppComponent {
   Store noteStore;
