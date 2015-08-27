@@ -11,7 +11,7 @@ import 'package:angular2/angular2.dart';
     properties: const ["title", "content", "edit"],
     host: const {'(body:^keydown)': 'documentOnKeyPress(\$event)'})
 @View(
-    directives: const [formDirectives],
+    directives: const [FORM_DIRECTIVES],
     templateUrl: "package:ng2_dart_notes/components/card/card.html")
 class Card {
   String _title;

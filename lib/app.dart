@@ -7,7 +7,7 @@ import 'package:ng2_dart_notes/components/card/card.dart';
 @Component(selector: 'app', viewBindings: const [Store, NoteFactory])
 @View(
     templateUrl: 'package:ng2_dart_notes/app.html',
-    directives: const [NgFor, formDirectives, Card])
+    directives: const [NgFor, FORM_DIRECTIVES, Card])
 class AppComponent {
   Store noteStore;
   Note selectedNote = null;
