@@ -1,0 +1,36 @@
+{
+  "Card": {
+    "kind": "type",
+    "value": {
+      "id": "Card",
+      "selector": "notes-card",
+      "compileChildren": true,
+      "hostProperties": {},
+      "hostListeners": {
+        "body:^keydown": "documentOnKeyPress($event)"
+      },
+      "hostActions": {},
+      "hostAttributes": {},
+      "properties": [
+        "title",
+        "content",
+        "edit"
+      ],
+      "readAttributes": [],
+      "type": 1,
+      "exportAs": null,
+      "callOnDestroy": false,
+      "callOnCheck": false,
+      "callOnInit": false,
+      "callOnChange": false,
+      "callOnAllChangesDone": false,
+      "events": [
+        "onSave: onsave",
+        "onDelete: ondelete",
+        "onCancel: oncancel"
+      ],
+      "changeDetection": null,
+      "version": 1
+    }
+  }
+}
