@@ -1,6 +1,6 @@
 library app;
 
-import 'package:angular2/angular2.dart';
+import 'package:angular2/angular2.dart' show Component, FORM_DIRECTIVES, NgFor, View;
 import 'package:ng2_dart_notes/services/note_store.dart' show Store, Note, NoteFactory;
 import 'package:ng2_dart_notes/components/card/card.dart';
 

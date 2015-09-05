@@ -1,5 +1,5 @@
 import 'dart:html' as html;
-import 'package:angular2/angular2.dart';
+import 'package:angular2/angular2.dart' show Component, EventEmitter, FORM_DIRECTIVES, View;
 
 @Component(
     selector: "notes-card",

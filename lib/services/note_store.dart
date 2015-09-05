@@ -1,6 +1,6 @@
 library todo_store;
 
-import 'package:angular2/di.dart';
+import 'package:angular2/di.dart' show Injectable;
 
 
 class KeyModel {
