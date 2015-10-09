@@ -3,12 +3,12 @@ import 'package:angular2/angular2.dart' show Component, EventEmitter, FORM_DIREC
 
 @Component(
     selector: "notes-card",
-    events: const [
+    outputs: const [
       "onSave: onsave",
       "onDelete: ondelete",
       "onCancel: oncancel"
     ],
-    properties: const ["title", "content", "edit"],
+    inputs: const ["title", "content", "edit"],
     host: const {'(body:^keydown)': 'documentOnKeyPress(\$event)'})
 @View(
     directives: const [FORM_DIRECTIVES],
