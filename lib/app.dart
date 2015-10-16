@@ -4,7 +4,7 @@ import 'package:angular2/angular2.dart' show Component, FORM_DIRECTIVES, NgFor, 
 import 'package:ng2_dart_notes/services/note_store.dart' show Store, Note, NoteFactory;
 import 'package:ng2_dart_notes/components/card/card.dart';
 
-@Component(selector: 'app', viewBindings: const [Store, NoteFactory])
+@Component(selector: 'app', viewProviders: const [Store, NoteFactory])
 @View(
     templateUrl: 'package:ng2_dart_notes/app.html',
     directives: const [NgFor, FORM_DIRECTIVES, Card])
