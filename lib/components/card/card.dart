@@ -1,14 +1,9 @@
 import 'dart:html' as html;
-import 'package:angular2/angular2.dart' show Component, EventEmitter, FORM_DIRECTIVES, View;
+
+import 'package:angular2/angular2.dart';
 
 @Component(
     selector: "notes-card",
-    outputs: const [
-      "onSave: onsave",
-      "onDelete: ondelete",
-      "onCancel: oncancel"
-    ],
-    inputs: const ["title", "content", "edit"],
     host: const {'(body:^keydown)': 'documentOnKeyPress(\$event)'})
 @View(
     directives: const [FORM_DIRECTIVES],
@@ -19,25 +14,26 @@ class Card {
 
   String newTitle;
   String newContent;
-  bool edit = false;
+  @Input() bool edit = false;
 
-  EventEmitter onSave = new EventEmitter();
-  EventEmitter onDelete = new EventEmitter();
-  EventEmitter onCancel = new EventEmitter();
+  @Output() EventEmitter onSave = new EventEmitter();
+  @Output() EventEmitter onDelete = new EventEmitter();
+  @Output() EventEmitter onCancel = new EventEmitter();
 
-  set title(title) {
-    _title = title;
-    newTitle = title;
-  }
+  get content => _content;
+
+  @Input()
   set content(content) {
     _content = content;
     newContent = content;
   }
-  get title => _title;
-  get content => _content;
 
-  save() {
-    onSave.add({"title": newTitle, "content": newContent});
+  get title => _title;
+
+  @Input()
+  set title(title) {
+    _title = title;
+    newTitle = title;
   }
 
   delete() {
@@ -50,5 +46,9 @@ class Card {
       newTitle = _title;
       onCancel.add(null);
     }
+  }
+
+  save() {
+    onSave.add({"title": newTitle, "content": newContent});
   }
 }

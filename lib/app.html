@@ -5,13 +5,13 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" class="validate" [(ng-model)]="newTitle" (focus)="showAll=true">
+                    <input id="first_name" type="text" class="validate" [(ngModel)]="newTitle" (focus)="showAll=true">
                     <label for="first_name">Title</label>
                 </div>
             </div>
             <div class="row" [class.hide]="!showAll">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" [(ng-model)]="newContent"></textarea>
+                    <textarea id="textarea1" class="materialize-textarea" [(ngModel)]="newContent"></textarea>
                     <label for="textarea1">Add note</label>
                 </div>
             </div>
@@ -23,9 +23,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col s12 m4 l3" *ng-for="#note of noteStore.list">
+    <div class="col s12 m4 l3" *ngFor="#note of noteStore.list">
         <notes-card [title]="note.title" [content]="note.content" [edit]="selectedNote == note"
-                (click)="selectNote(note)" (onsave)="doneEditing($event, note)"
-                (ondelete)="deleteMe(note)" (oncancel)="clearSelection()"></notes-card>
+                (click)="selectNote(note)" (onSave)="doneEditing($event, note)"
+                (onDelete)="deleteMe(note)" (onCancel)="clearSelection()"></notes-card>
     </div>
 </div>

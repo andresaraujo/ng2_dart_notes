@@ -7,8 +7,10 @@ homepage: http://andresaraujo.github.io/ng2_dart_notes/
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
-  angular2: "^2.0.0-alpha.44"
+  angular2: "2.0.0-beta.0"
   browser: any
+  dart_to_js_script_rewriter: '^0.1.0'
 transformers:
   - angular2:
       entry_points: web/main.dart
+  - dart_to_js_script_rewriter
